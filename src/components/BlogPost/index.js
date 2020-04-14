@@ -17,18 +17,24 @@ const BlogPost = (props) => {
     blogImage: "" ,
     blogText: ""
 });
-  const [postId,setPostId] = useState('');
+const [slug, setSlug] = useState('');
 
-  useEffect(()=>{
-    const postId = props.match.params.postId;
-    const post = blogPost.data.find(post=>post.id == postId);
-    console.log("post"+post);
+
+useEffect(() => {
+    const slug = props.match.params.slug;
+    const post = blogPost.data.find(post => post.id == slug);
+    console.log(blogPost.data);
+    
+    console.log(slug);
+    console.log(post);
+    
     
     setPost(post);
-    setPostId(postId);
-    
-  },[post,props.match.params.postId]);
-  if(post.blogImage == "") return null;
+    setSlug(slug)
+}, [post, props.match.params.slug]);
+
+if(post.blogImage == "") return null;
+
   return(
     <div className="blogPostContainer">
       <Card>
