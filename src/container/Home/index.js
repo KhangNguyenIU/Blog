@@ -4,6 +4,7 @@ import Sidebar from "../../components/Sidebar";
 import Card from "../../components/UI/Card";
 import RecentPost from "./RecentPost"
 import blogData from "./../../data/blog.json"
+import Layout from "../../components/Layout";
 
 const SidebarImage =props=>{
   return(
@@ -66,10 +67,10 @@ const Home= props=>{
                   />
              
             </Card>
-            <section className="HomeContainer">
-              <RecentPost style={{width:'70%'}}/>
-              <Sidebar/>
-            </section>          
+
+            <Layout>
+              <RecentPost style={{width:'70%'}}/> 
+            </Layout>   
         </div>
     )
 };
